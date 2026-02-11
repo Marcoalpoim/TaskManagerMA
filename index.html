@@ -207,7 +207,7 @@
         const editTitleInput = document.getElementById('edit-task-title');
         const editDescriptionInput = document.getElementById('edit-task-description');
 
-       // organiza os dias da semana
+        // organiza os dias da semana
         const day = currentWeekStart.getDay();
         const diff = day === 0 ? -6 : 1 - day;
         currentWeekStart.setDate(currentWeekStart.getDate() + diff);
@@ -332,6 +332,8 @@
             DAY_BOX.forEach((dayBox, WEEK_DAY) => {
                 dayBox.addEventListener('click', () => {
 
+                    showTasksView();
+
                     selectedWeekDay = WEEK_DAY;
                     localStorage.setItem('selectedWeekDay', WEEK_DAY);
 
@@ -342,6 +344,9 @@
                     loadTasksByDay(WEEK_DAY);
                 });
             });
+
+
+
         }
 
 
@@ -361,7 +366,7 @@
                 updateWeekDisplay();
                 highlightCurrentDay();
                 clearActiveDay();
-                clearTasksView();
+
 
                 if (currentWeekStart.getTime() === minWeekStart.getTime()) {
                     prevWeekBtn.disabled = true;
@@ -374,7 +379,7 @@
                 updateWeekDisplay();
                 highlightCurrentDay();
                 clearActiveDay();
-                clearTasksView();
+
 
 
                 prevWeekBtn.disabled = false;
@@ -383,15 +388,35 @@
 
         }
 
-        function clearTasksView() {
-            const taskWrapper = document.querySelector('.task-block-wrapper');
-            taskWrapper.innerHTML = '';
 
+        const taskBlockWrapper = document.querySelector('.task-block-wrapper');
+        const taskTitle = document.querySelector('.tasks-title');
+
+        function hideTasksView() {
+            taskBlockWrapper.classList.add('hidden');
+            taskTitle.classList.add('hidden');
+        }
+
+        function showTasksView() {
+            taskBlockWrapper.classList.remove('hidden');
+            taskTitle.classList.remove('hidden');
         }
 
 
+
         function clearActiveDay() {
-            DAY_BOX.forEach(box => box.classList.remove('active'));
+
+            const activeDay = document.querySelector('.day-box.active');
+
+            if (!activeDay) {
+                return;
+            } else {
+                 activeDay.classList.remove('active');
+            }
+
+            hideTasksView();
+
+
         }
 
         const editTaskWrapper = document.querySelector('.task-edit-wrapper');
@@ -419,6 +444,39 @@
 
         }
 
+        const submitBtn = document.querySelector('.submit-task');
+        const newTaskWrapper = document.querySelector('.task-new-wrapper');
+
+        submitBtn.addEventListener('click', () => {
+            const title = document.getElementById('task-name').value;
+            const description = document.getElementById('task-description').value;
+
+            if (!title.trim()) return;
+
+            addTask(selectedWeekDay, title, description);
+
+            document.getElementById('task-name').value = '';
+            document.getElementById('task-description').value = '';
+            newTaskWrapper.classList.remove('open');
+        });
+
+        function addTask(CURRENT_DAY, title, description) {
+            const dateKey = getDateFromWeekDay(CURRENT_DAY);
+
+            if (!tasksByDate[dateKey]) {
+                tasksByDate[dateKey] = []; // em vez de undefined damos um valor "[]"
+            }
+
+            tasksByDate[dateKey].push({ // adiciona a task com done: false
+                title,
+                description,
+                done: false
+            });
+
+            saveTasks(); // salva no local storage
+            loadTasksByDay(CURRENT_DAY);
+        }
+
 
 
         // funçao dia
@@ -440,7 +498,7 @@
             const taskWrapper = document.querySelector('.task-block-wrapper');
             taskWrapper.innerHTML = '';
 
-            tasks.forEach((task, TASK_POSITION) => { 
+            tasks.forEach((task, TASK_POSITION) => {
                 //if (!task) return; //tarefa undefined
                 const div = document.createElement('div');
                 div.className = 'task-block';
@@ -483,7 +541,7 @@
                     // tarefa e dia selecionads
                     editingTaskId = TASK_POSITION;
                     editingWeekDay = CURRENT_DAY;
-                    
+
                     // abre a info da tarefa que ja existe
                     editTitleInput.value = task.title;
                     editDescriptionInput.value = task.description || '';
@@ -495,7 +553,7 @@
             });
         }
 
- 
+
         function completeTask(CURRENT_DAY, TASK_POSITION) {
             const dateKey = getDateFromWeekDay(CURRENT_DAY);
 
@@ -507,15 +565,15 @@
             loadTasksByDay(CURRENT_DAY);
         }
 
-         
+
         function deleteTask(CURRENT_DAY, TASK_POSITION) {
             const dateKey = getDateFromWeekDay(CURRENT_DAY);
             tasksByDate[dateKey].splice(TASK_POSITION, 1); // remove a tarefa
             saveTasks();
             loadTasksByDay(CURRENT_DAY);
         }
- 
-       
+
+
 
         function taskEditor() {
 
@@ -543,43 +601,10 @@
         }
 
 
-        const submitBtn = document.querySelector('.submit-task');
-        const newTaskWrapper = document.querySelector('.task-new-wrapper');
-
-        submitBtn.addEventListener('click', () => {
-            const title = document.getElementById('task-name').value;
-            const description = document.getElementById('task-description').value;
-
-            if (!title.trim()) return;
-
-            addTask(selectedWeekDay, title, description);
-
-            document.getElementById('task-name').value = '';
-            document.getElementById('task-description').value = '';
-            newTaskWrapper.classList.remove('open');
-        });
-
-         function addTask(CURRENT_DAY, title, description) {
-            const dateKey = getDateFromWeekDay(CURRENT_DAY);
-
-            if (!tasksByDate[dateKey]) {
-                tasksByDate[dateKey] = []; // em vez de undefined damos um valor "[]"
-            }
-
-            tasksByDate[dateKey].push({ // adiciona a task com done: false
-                title,
-                description,
-                done: false
-            });
-
-            saveTasks(); // salva no local storage
-            loadTasksByDay(CURRENT_DAY);
-        }
 
 
 
-
-        // guarda as task no storagelocal
+        // guarda no storagelocal
         function saveTasks() {
             localStorage.setItem('tasksByDate', JSON.stringify(tasksByDate));
         }

@@ -359,6 +359,11 @@
        border: 1px dashed white;
    }
 
+.hidden{
+    display: none !important;
+}
+
+
    main .task-wrapper {
        align-self: stretch;
        border-radius: 15px;
