@@ -1,0 +1,1070 @@
+   @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+   .bricolage-grotesque {
+       font-family: "Bricolage Grotesque", sans-serif;
+       font-optical-sizing: auto;
+       font-weight: 200;
+       font-style: normal;
+   }
+
+   .roboto {
+       font-family: "Roboto", sans-serif;
+       font-optical-sizing: auto;
+       font-weight: 200;
+       font-style: normal;
+
+   }
+
+
+   :root {
+       --bg-color: #000000;
+       --text-color: #ffffff;
+   }
+
+   [data-theme='dark'] {
+       --bg-color: #000000;
+       --text-color: #f0f0f0;
+   }
+
+   [data-theme='light'] {
+
+       --bg-color: #ffffff;
+       --text-color: #000000;
+   }
+
+   * {
+       -webkit-box-sizing: border-box;
+       box-sizing: border-box;
+
+   }
+
+   body {
+       margin: 0;
+       padding: 0;
+       height: 100vh;
+       width: 100%;
+       display: flex;
+       font-family: "Bricolage Grotesque", sans-serif;
+       overflow: auto;
+       flex-direction: column;
+       justify-content: center;
+       background-color: var(--bg-color);
+       color: var(--text-color);
+       transition: background-color 0.3s ease;
+
+   }
+
+
+
+
+   .body-wrapper {
+       width: 100%;
+       max-width: 1000px;
+       height: 100dvh;
+       margin: 0 auto;
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 20px;
+       text-align: right; 
+       color: #fff;
+       padding: 20px;
+   }
+
+   header {
+       width: 100%;
+
+
+   }
+
+
+
+
+   header .header-wrapper {
+    overflow: hidden;
+       align-self: stretch;
+       height: 67px;
+       border-radius: 15px;
+       background-color: #171717;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 8px 10px;
+       box-sizing: border-box;
+       gap: 20px;
+       border: 1px dashed #ffffff2b;
+   }
+
+   header .header-wrapper .logo-container {
+
+       display: flex;
+   }
+
+   header .header-wrapper .main-logo {
+       height: 48px;
+       width: 48px;
+       height: auto;
+       color: white;
+
+   }
+
+   header .header-wrapper .main-title {
+       border-radius: 10px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 5px;
+       font-size: 1rem;
+       line-height: 1.2rem;
+
+   }
+
+   header .header-wrapper .main-title h1 {
+       position: relative;
+       font-family: "Bricolage Grotesque", sans-serif;
+
+   }
+
+
+   header .header-wrapper .switch-container {
+       border-radius: 30px;
+       background-color: #000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 5px;
+       gap: 10px;
+   }
+
+   .moon {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 35px;
+       width: 35px;
+       border-radius: 30px;
+       opacity: 0.4;
+       border: 0px solid white;
+       background-color: #000000;
+       cursor: pointer;
+   }
+
+   .moon:hover {
+       transition: all 0.3s;
+       border: 0px solid white;
+       background-color: #414141;
+       cursor: pointer;
+   }
+
+   .moon img {
+       height: 25px;
+       width: 25px;
+       padding: 3px;
+       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(103%) contrast(104%);
+
+   }
+
+   .sun {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 35px;
+       width: 35px;
+       border: 0px solid white;
+       background-color: #000000;
+       border-radius: 30px;
+       opacity: 0.4;
+       cursor: pointer;
+   }
+
+   .sun:hover {
+       transition: all 0.3s;
+       border: 0px solid white;
+       background-color: #414141;
+       cursor: pointer;
+   }
+
+   .sun img {
+       height: 25px;
+       width: 25px;
+       padding: 3px;
+       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(103%) contrast(104%);
+
+   }
+
+   .focus {
+       opacity: 1;
+       background-color: #262626;
+       box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25) inset;
+
+   }
+
+   .icon-cfg {
+       height: 30px;
+       width: 30px;
+       border-radius: 30px;
+       border: 1px solid white;
+       padding: 5px;
+   }
+
+   .icon-cfg:hover {
+       background-color: #888888;
+       cursor: pointer;
+   }
+
+   main {
+       width: 100%;
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 20px;
+       text-align: right; 
+       color: #fff;
+       height: 100%;
+   }
+
+   main .week-wrapper {
+
+       align-self: stretch;
+       height: auto;
+       border-radius: 15px;
+       background-color: #171717;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 8px 10px;
+       box-sizing: border-box;
+       gap: 20px;
+       text-align: center;
+       font-size: 12px;
+       border: 1px dashed #ffffff2b;
+   }
+
+   main .week-wrapper .week-nav-button#prev-week {
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 35px;
+       width: 35px;
+       border-radius: 30px;
+       background-color: #ffffff;
+       border: 0px solid white;
+       transform: rotate(180deg);
+   }
+
+   main .week-wrapper .week-nav-button#next-week {
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 35px;
+       width: 35px;
+       border-radius: 30px;
+       background-color: #ffffff;
+       border: 0px solid white;
+   }
+
+   main .week-wrapper .week-nav-button#prev-week:hover,
+   main .week-wrapper .week-nav-button#next-week:hover {
+       cursor: pointer;
+       background-color: #ffffff31;
+       transition: background-color 0.3s;
+       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(103%) contrast(104%);
+
+   }
+
+   main .week-wrapper .week-container {
+
+       box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+       border-radius: 10px;
+       background-color: #262626;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 5px;
+       gap: 10px;
+   }
+
+   main .week-wrapper .week-container .day-box {
+
+       border-radius: 7px;
+       background-color: #262626;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 5px 10px;
+       gap: 2px;
+   }
+
+   main .week-wrapper .week-container .day-box:hover {
+
+       cursor: pointer;
+
+       background-color: rgba(255, 255, 255, 0.151) !important;
+       color: rgb(255, 255, 255) !important;
+   }
+
+   main .week-wrapper .week-container .day-box h2 {
+
+       display: flex;
+       text-align: center;
+       flex-direction: column;
+       align-items: center;
+       margin: 0;
+   }
+
+   main .week-wrapper .week-container .day-box h2 .day-name {
+
+       display: flex;
+       text-align: center;
+       font-weight: lighter;
+       font-size: 1rem;
+   }
+
+   main .week-wrapper .week-container .day-box h2 .day-number {
+
+       display: flex;
+       text-align: center;
+       font-weight: bold;
+       font-size: 1.2rem;
+   }
+
+
+   main .week-wrapper .week-arrows {
+
+       display: flex;
+       width: auto;
+       justify-content: space-around;
+   }
+
+
+   .current-day {
+       background-color: rgb(255, 255, 255) !important;
+       color: black !important;
+   }
+
+   .disabled {
+       opacity: 0.4;
+       pointer-events: none;
+       cursor: not-allowed;
+   }
+
+   .day-box.active {
+       border-bottom: 0px solid black;
+       font-weight: 600;
+       border: 1px dashed white;
+   }
+
+   main .task-wrapper {
+       align-self: stretch;
+       border-radius: 15px;
+       background-color: #171717;
+       overflow: hidden;
+       display: flex;
+       align-items: flex-start;
+       padding: 10px;
+       gap: 10px;
+       text-align: left;
+       font-size: 14px;
+       border: 1px dashed #ffffff2b;
+       height: 100%;
+   }
+
+   main .task-wrapper .task-container {
+       align-self: stretch;
+       flex: 1;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       justify-content: space-between;
+       gap: 10px;
+       height: 100%;
+   }
+
+
+   main .task-wrapper .task-container .main-tasks {
+       align-self: stretch;
+       height: max-content;
+       box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+       border-radius: 10px;
+       background-color: #262626;
+       overflow-x: hidden;
+        overflow-y: scroll;
+       flex-shrink: 0;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+     padding: 0px 5px 0 10px;
+       box-sizing: border-box;
+       gap: 10px;
+       height: auto;
+
+   }
+
+   main .task-wrapper .task-container .main-tasks .tasks-title {
+       align-self: stretch;
+       display: flex;
+       align-items: flex-start;
+       justify-content: flex-start;
+       padding: 5px;
+       font-size: 30px;
+   }
+
+   main .task-wrapper .task-container .main-tasks .tasks-title h3 {
+
+       padding: 5px;
+       font-size: 22px;
+       margin: 0;
+       gap: 5px;
+   }
+
+   main .task-wrapper .task-container .main-tasks .tasks-title h3 span {
+       font-weight: 400;
+       font-size: 20px;
+   }
+
+
+
+
+
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper {
+       align-self: stretch;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       overflow-x: hidden; 
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block {
+       flex: 1;
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       width: 100%;
+       flex-shrink: 0;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block .task {
+       flex: 1;
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       margin: 5px auto;
+       flex-shrink: 0;
+       padding: 5px;
+       border-radius: 10px;
+       border: 1px dashed #ffffff00;
+
+       transition: all 0.3s;
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block .task:hover {
+       background-color: #3a3a3a;
+       border: 1px dashed #ffffff2b;
+       cursor: pointer;
+
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block .task .task-text {
+       flex: 1;
+       display: flex;
+       align-items: flex-start;
+       flex-shrink: 0;
+       flex-direction: column;
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block .task .task-text h3 {
+       margin: 0;
+       font-size: 1rem;
+       line-height: 1.2rem;
+       width: 100%;
+
+   }
+
+   main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block .task .task-text h4 {
+       font-weight: 400;
+       opacity: 0.6;
+       margin: 0;
+       font-size: 0.85rem;
+
+   }
+
+   .task.completed .task-text h3,
+   .task.completed .task-text h4 {
+       text-decoration: line-through;
+       opacity: 0.4;
+   }
+
+   .task.completed img {
+       opacity: 0.4;
+   }
+
+
+
+
+   main .task-wrapper .task-container .add-new-task-container {
+       align-self: stretch;
+       box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+       border-radius: 10px;
+       background-color: #414141;
+       overflow: hidden;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 10px;
+       gap: 20px;
+       font-size: 20px;
+       height: auto;
+   }
+
+   main .task-wrapper .task-container .add-new-task-container h3 {
+       margin: 0;
+       gap: 20px;
+       font-size: 1rem;
+   }
+
+
+   main .task-wrapper .task-new-wrapper {
+       align-self: stretch;
+       flex: 1;
+       box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+       border-radius: 10px;
+       background-color: #505050;
+       overflow: hidden;
+
+       flex-direction: column;
+       align-items: center;
+       padding: 10px;
+       gap: 10px;
+   }
+
+   .task-new-wrapper {
+       display: none;
+       position: relative;
+   }
+
+   .task-new-wrapper.open {
+       display: flex;
+   }
+
+
+   main .task-wrapper .task-new-wrapper .close-btn-container {
+       align-self: stretch;
+       display: flex;
+       flex-direction: row;
+       align-items: flex-start;
+       color: #767676;
+   }
+
+   main .task-wrapper .task-new-wrapper .close-btn-container .close-btn {
+       flex: 1;
+       border-radius: 30px;
+       display: flex;
+       align-items: center;
+   }
+
+   main .task-wrapper .task-new-wrapper .input-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 5px;
+       flex: 1 0 0;
+       align-self: stretch;
+   }
+
+   main .task-wrapper .task-new-wrapper .input-container .task-input-type {
+       align-self: stretch;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+   }
+
+   main .task-wrapper .task-new-wrapper .input-container .task-input-type h3 {
+       align-self: stretch;
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       margin: 0;
+   }
+
+
+   main .task-wrapper .task-new-wrapper .input-container .task-input-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+       height: 100%;
+       align-self: stretch;
+   }
+
+   main .task-wrapper .task-new-wrapper .input-container .task-input-container .task-input {
+       display: flex;
+       align-items: flex-start;
+       gap: 10px;
+       height: 100%;
+       align-self: stretch;
+       border-radius: 8px;
+       background: #FFF;
+   }
+
+   textarea {
+       margin: auto;
+       height: 100%;
+       width: 100%;
+       outline: none;
+       border: 2px solid black;
+       border-radius: 8px;
+       padding: 10px;
+       font-size: 1rem;
+       font-family: "Bricolage Grotesque", sans-serif;
+       background-color: white;
+   }
+
+   textarea:focus {
+       border: 2px solid rgb(168, 168, 254);
+   }
+
+
+
+   input {
+       margin: auto;
+       height: 40px;
+       width: 100%;
+       outline: none;
+       border: 2px solid black;
+       border-radius: 8px;
+       padding-left: 10px;
+       font-size: 1rem;
+       font-family: "Bricolage Grotesque", sans-serif;
+       background-color: white;
+   }
+
+   input:focus {
+       border: 2px solid rgb(0, 0, 0);
+   }
+
+
+   .noflex {
+       flex: 0 0 0 !important;
+   }
+
+   /*submit task*/
+   main .task-wrapper .task-new-wrapper .submit-task-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+       align-self: stretch;
+   }
+
+   main .task-wrapper .task-new-wrapper .submit-task-container .submit-task {
+       display: flex;
+       width: 100%;
+       height: auto;
+       justify-content: center;
+       align-items: center;
+       border-radius: 30px;
+       border: 1px solid #FFF;
+   }
+
+   main .task-wrapper .task-new-wrapper .submit-task-container .submit-task:hover {
+       background-color: #888888;
+       cursor: pointer;
+   }
+
+   main .task-wrapper .task-new-wrapper .submit-task-container .submit-task h3 {
+       color: #FFF;
+       font-size: 1rem;
+       font-style: normal;
+       font-weight: 700;
+       line-height: normal;
+   }
+
+
+
+
+   /*task editor*/
+   main .task-wrapper .task-edit-wrapper {
+       align-self: stretch;
+       flex: 1;
+       box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+       border-radius: 10px;
+       background-color: #505050;
+       overflow: hidden;
+       flex-direction: column;
+       align-items: center;
+       padding: 10px;
+       gap: 10px;
+        opacity: 0;
+        transition: opacity 1s ease;
+   }
+
+   .task-edit-wrapper {
+       display: none;
+   }
+
+   .task-edit-wrapper.open {
+       display: flex;
+       opacity: 1 !important;
+   }
+
+
+
+
+   main .task-wrapper .task-edit-wrapper .close-btn-container {
+       align-self: stretch;
+       display: flex;
+       flex-direction: row;
+       align-items: flex-start;
+       color: #767676;
+   }
+
+   main .task-wrapper .task-edit-wrapper .close-btn-container .close-btn {
+       flex: 1;
+       border-radius: 30px;
+       display: flex;
+       align-items: center;
+   }
+
+
+   main .task-wrapper .task-edit-wrapper h2 {
+       align-self: stretch;
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       margin: 0;
+   }
+
+
+
+   main .task-wrapper .task-edit-wrapper .input-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 5px;
+       flex: 1 0 0;
+       align-self: stretch;
+   }
+
+
+
+   main .task-wrapper .task-edit-wrapper h3 {
+       align-self: stretch;
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       margin: 0;
+   }
+
+
+   main .task-wrapper .task-edit-wrapper .task-edit .input-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+       height: 100%;
+       align-self: stretch;
+   }
+
+
+
+   /*submit task*/
+   main .task-wrapper .task-edit-wrapper .task-edit-actions {
+       display: flex;
+       align-items: flex-start;
+       gap: 10px;
+       align-self: stretch;
+   }
+
+   main .task-wrapper .task-edit-wrapper .task-edit-actions button {
+       display: flex;
+       width: auto;
+       height: auto;
+       padding: 5px;
+       justify-content: center;
+       align-items: center;
+       border-radius: 30px;
+       border: 1px solid #FFF;
+       background-color: transparent;
+   }
+
+   main .task-wrapper .task-edit-wrapper .task-edit-actions button p {
+       font-size: 1rem;
+       line-height: 1rem;
+       margin: 0;
+       color: #FFF;
+       font-weight: 600;
+   }
+
+   main .task-wrapper .task-edit-wrapper .task-edit-actions button:first-child {
+
+       width: 100%;
+   }
+
+   main .task-wrapper .task-edit-wrapper .task-edit-actions button:hover {
+       background-color: #888888;
+       cursor: pointer;
+   }
+
+   main .task-wrapper .task-edit-wrapper .task-edit-actions button img {
+       height: 25px;
+       width: 25px;
+       padding: 3px;
+       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(103%) contrast(104%);
+   }
+
+
+
+
+
+
+
+   footer {
+       align-self: stretch;
+       height: auto;
+       border-radius: 15px;
+       background-color: #171717;
+       overflow: hidden;
+       flex-shrink: 0;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 10px;
+       box-sizing: border-box;
+       font-size: 30px;
+       border: 1px dashed #ffffff2b;
+   }
+
+   footer .footer-wrapper {
+       align-self: stretch;
+       flex: 1;
+       display: flex;
+       width: auto;
+       align-items: center;
+       justify-content: flex-start;
+       gap: 20px;
+       max-width: 100%;
+   }
+
+   footer .footer-wrapper a {
+
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+   }
+
+   footer .footer-wrapper a .icon-cfg {
+       height: 30px;
+       width: 30px;
+       border-radius: 0px;
+       border: 0px solid white;
+       padding: 5px;
+   }
+
+   footer .footer-wrapper a .icon-cfg:hover {
+       background-color: #35323200;
+       cursor: pointer;
+   }
+
+   footer .clock-box {
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: white;
+   }
+
+   footer .clock-box h2 {
+
+       font-size: 2rem;
+       font-weight: bold;
+       margin: 0;
+   }
+
+   footer .clock-box p {
+
+       font-size: 2rem;
+       font-weight: 400;
+   }
+
+
+
+
+   /* width */
+   ::-webkit-scrollbar {
+       width: 5px;
+       height: 5px;
+   }
+
+   /* Track */
+   ::-webkit-scrollbar-track {
+       background-color: rgba(255, 255, 255, 0);
+   }
+
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+       background: #ffffff;
+       border-radius: 10px;
+       height: 10px;
+       width: 3px;
+   }
+
+
+
+   @media only screen and (max-width: 768px) {
+ 
+       .body-wrapper {
+           gap: 10px;
+       }
+
+       body {
+           height: 100%;
+       }
+
+       main {
+
+           gap: 10px;
+
+       }
+
+       main .week-wrapper {
+
+           top: 0;
+           position: sticky;
+
+       }
+
+       header .header-wrapper .main-title {
+           border-radius: 10px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           padding: 0px;
+           font-size: 0.7rem;
+           line-height: 1.2rem;
+       }
+
+       main .week-wrapper {
+           gap: 10px;
+
+       }
+
+       main .week-wrapper .week-container {
+           box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.25) inset;
+           border-radius: 10px;
+           background-color: #262626;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           padding: 5px;
+           gap: 5px;
+           width: 100%;
+           overflow-x: scroll;
+       }
+
+       main .task-wrapper {
+
+           flex-direction: column-reverse;
+       }
+
+       main .task-wrapper .task-edit-wrapper {
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+ 
+           transform: translateY(100%);
+           opacity: 0;
+           transition: transform 0.4s ease, opacity 0.3s ease;
+           pointer-events: none;
+       }
+       .task-edit-wrapper {
+           display: block;
+       }
+
+       main .task-wrapper .task-edit-wrapper.open {
+
+           transform: translateY(0);
+           opacity: 1;
+           pointer-events: auto;
+       }
+
+         main .task-wrapper .task-new-wrapper {
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+        
+
+
+           transform: translateY(100%);
+           opacity: 0;
+
+           transition: transform 0.4s ease, opacity 0.3s ease;
+           pointer-events: none;
+       }
+
+
+       .task-new-wrapper {
+           display: block;
+       }
+
+       main .task-wrapper .task-new-wrapper.open {
+
+           transform: translateY(0);
+           opacity: 1;
+           pointer-events: auto;
+       }
+
+       main .week-wrapper .week-container .day-box h2 .day-number {
+           font-size: 1rem;
+       }
+
+       main .week-wrapper .week-container .day-box h2 .day-name {
+           font-size: 0.8rem;
+       }
+
+       main .task-wrapper .task-container {
+
+           justify-content: space-between;
+
+       }
+
+       main .week-wrapper .week-container .day-box {
+
+           align-items: center;
+           padding: 5px 5px;
+           gap: 2px;
+           width: 100%;
+           min-width: 70px;
+       }
+
+      
+
+       ::-webkit-scrollbar {
+           width: 5px;
+           height: 1px;
+       }
+
+       main .task-wrapper .task-new-wrapper .submit-task-container .submit-task h3 {
+
+           margin: 10px;
+       }
+   }
+
+      @media only screen and (max-width: 240px) {
+    header .header-wrapper {
+        align-self: stretch;
+        height: auto;
+        gap: 0px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+     }
+}

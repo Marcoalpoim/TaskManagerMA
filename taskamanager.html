@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task Manager</title>
+
+    <link rel="icon" type="image/png" href="img/1favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/1favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="./css/taskmanager.css">
+
+</head>
+
+<body>
+
+    <div class="body-wrapper">
+
+
+        <header>
+            <div class="header-wrapper">
+                <img class="main-logo" src="./img/logo-malpoim.svg" alt="main logo">
+                <div class="main-title">
+                    <h1>TASK MANAGER</h1>
+                </div>
+                <div class="switch-container">
+                    <button id="moon" class="moon"><img src="./img/Moon.svg" alt="moon"></button>
+                    <button id="sun" class="sun"><img src="./img/Sun.svg" alt="sun"></button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+
+            <div class="week-wrapper">
+
+                <button class="week-nav-button" id="prev-week"><img src="./img/Arrow-left.svg"
+                        alt="Arrow-left"></button>
+
+                <div class="week-container">
+                    <div class="day-box" id="day-0">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-1">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-2">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-3">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-4">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-5">
+                        <h2></h2>
+                    </div>
+                    <div class="day-box" id="day-6">
+                        <h2></h2>
+                    </div>
+                </div>
+                <button class="week-nav-button" id="next-week"><img src="./img/Arrow-left.svg"
+                        alt="Arrow-left"></button>
+
+            </div>
+
+
+
+            <div class="task-wrapper">
+
+                <div class="task-container">
+                    <div class="main-tasks">
+                        <div class="tasks-title">
+                            <h3> </h3>
+                        </div>
+                        <div class="task-block-wrapper">
+                            <div class="task-block"></div>
+                        </div>
+
+                    </div>
+                    <div class="add-new-task-container">
+                        <h3>ADICIONAR UMA NOVA TAREFA</h3>
+                        <img class="icon-cfg" src="./img/+.svg" alt="">
+
+                    </div>
+                </div>
+
+                <div class="task-new-wrapper">
+                    <div class="close-btn-container">
+                        <div class="close-btn">
+                            <b class="project-title">Tarefa que vai ser completada de certeza!</b>
+                        </div>
+                        <img class="icon-cfg" src="./img/X.svg" alt="">
+
+                    </div>
+                    <div class="input-container noflex">
+                        <div class="task-input-type">
+                            <h3>Nome</h3>
+                        </div>
+                        <div class="task-input-container">
+
+                            <div class="task-input">
+                                <input type="text" id="task-name" placeholder="Task name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="task-input-type">
+                            <h3>Descrição</h3>
+                        </div>
+                        <div class="task-input-container">
+                            <div class="task-input">
+
+                                <textarea id="task-description" placeholder="Task description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-task-container">
+
+                        <div class="submit-task">
+                            <h3>ADICIONAR TAREFA</h3>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="task-edit-wrapper">
+                    <div class="close-btn-container">
+                        <div class="close-btn">
+                            <b class="project-title">Tarefa que vai ser completada de certeza!</b>
+                        </div>
+                        <img class="icon-cfg" src="./img/X.svg" alt="">
+
+                    </div>
+
+                    <h2>Editar Tarefa</h2>
+
+                    <div class="input-container noflex">
+                        <h3>Nome</h3>
+                        <input title="title" type="text" id="edit-task-title">
+                    </div>
+
+                    <div class="input-container">
+                        <h3>Descrição</h3>
+                        <textarea title="description" id="edit-task-description"></textarea>
+                    </div>
+
+                    <div class="task-edit-actions">
+                        <button id="save-task"><img title="guardar tarefa" src="./img/Save.svg" alt="guardar tarefa">
+                            <p>Salvar</p>
+                        </button>
+                        <button id="duplicate-task"><img title="duplicar tarefa" src="./img/Copy.svg"
+                                alt="duplicar tarefa"></button>
+                        <button id="move-task"><img title="mover tarefa" src="./img/nextday.svg"
+                                alt="mover tarefa"></button>
+                        <button id="delete-task-edit" class="danger"><img title="eliminar tarefa"
+                                src="./img/Trash_1.svg" alt="eliminar tarefa"></button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+        <footer>
+            <div class="footer-wrapper">
+
+                <a title="instagram" href="#"><img class="icon-cfg" src="./img/Instagram.svg" alt="instagram"></a>
+                <a title="email" href="#"><img class="icon-cfg" src="./img/mark_email_unread.svg" alt="email"></a>
+                <a title="linkedin" href="#"><img class="icon-cfg" src="./img/Linkedin.svg" alt="linkedin"></a>
+
+
+            </div>
+            <div class="clock-box">
+                <h2 id="time-display">00:00:00</h2>
+                <!--<p id="month-display"></p>-->
+            </div>
+
+
+
+        </footer>
+    </div>
+    <script>
+
+        //week container - alterar os dias da semana com os botoes
+        // day box tem muda o dia automaticamente no h2 conforme a semana avança ou recua 
+
+        const DAY_BOX = document.querySelectorAll('.day-box');
+
+        let currentWeekStart = new Date();
+        let tasksByDate = JSON.parse(localStorage.getItem('tasksByDate')) || {};
+        let selectedWeekDay = parseInt(localStorage.getItem('selectedWeekDay')) || 0;
+
+        let editingTaskId = null;
+        let editingWeekDay = null;
+
+
+        const editWrapper = document.querySelector('.task-edit-wrapper');
+        const editTitleInput = document.getElementById('edit-task-title');
+        const editDescriptionInput = document.getElementById('edit-task-description');
+
+       // organiza os dias da semana
+        const day = currentWeekStart.getDay();
+        const diff = day === 0 ? -6 : 1 - day;
+        currentWeekStart.setDate(currentWeekStart.getDate() + diff);
+
+
+
+        function switchTheme() {
+            const moon = document.getElementById('moon');
+            const sun = document.getElementById('sun');
+            const body = document.body;
+
+            window.addEventListener('load', () => {
+
+                moon.classList.add('focus');
+            })
+
+            moon.addEventListener('click', () => {
+
+                //console.log('moon clicada');
+                moon.classList.add('focus');
+                sun.classList.remove('focus');
+
+                body.setAttribute('data-theme', 'dark');
+
+            })
+
+            sun.addEventListener('click', () => {
+
+                //console.log('sun clicada');
+                sun.classList.add('focus');
+                moon.classList.remove('focus');
+                body.removeAttribute('data-theme');
+                body.setAttribute('data-theme', 'light');
+            });
+
+        }
+
+
+        //mostra as task do current day
+        window.addEventListener('load', () => {
+            updateWeekDisplay();
+            highlightCurrentDay();
+
+            const today = new Date();
+            const CURRENT_DAY = today.getDay() === 0 ? 6 : today.getDay() - 1;
+
+            selectedWeekDay = CURRENT_DAY;
+            localStorage.setItem('selectedWeekDay', CURRENT_DAY);
+
+            DAY_BOX.forEach(d => d.classList.remove('active'));
+            DAY_BOX[CURRENT_DAY].classList.add('active');
+
+            const title = document.querySelector('.tasks-title h3');
+            const DAY_NAMES = [
+                'SEGUNDA-FEIRA',
+                'TERÇA-FEIRA',
+                'QUARTA-FEIRA',
+                'QUINTA-FEIRA',
+                'SEXTA-FEIRA',
+                'SÁBADO',
+                'DOMINGO'
+            ];
+
+            title.innerHTML = `<span>TAREFAS DE </span>${DAY_NAMES[CURRENT_DAY]}`;
+
+            loadTasksByDay(CURRENT_DAY);
+        });
+
+
+        // atualiza a semana em destaque 
+        function updateWeekDisplay() {
+            DAY_BOX.forEach((box, WEEK_DAY) => {
+                const dayDate = new Date(currentWeekStart); // criar nova data baseada no currentWeekStart
+
+                dayDate.setDate(currentWeekStart.getDate() + WEEK_DAY); // segunda - 0
+
+                const dayName = dayDate.toLocaleDateString('pt-PT', { // toLocaleDateString para obter o nome do dia
+                    weekday: 'short'
+                });
+
+                const dayNumber = dayDate.getDate();
+                const monthName = dayDate.toLocaleDateString(undefined, { month: "short" }); // getDate() para obter o numero do dia do mes
+
+                box.querySelector('h2').innerHTML = `<span class="day-number">${dayNumber} ${monthName}</span> <span class="day-name">${dayName}</span>`;
+            });
+        }
+        // destaque sobre o dia atual
+        function highlightCurrentDay() {
+            const today = new Date();
+            //const DAY_BOX = document.querySelectorAll('.day-box');
+            DAY_BOX.forEach((box, WEEK_DAY) => {
+                const boxDate = new Date(currentWeekStart);
+                boxDate.setDate(currentWeekStart.getDate() + WEEK_DAY);
+
+                if (
+                    boxDate.getDate() === today.getDate() &&
+                    boxDate.getMonth() === today.getMonth() &&
+                    boxDate.getFullYear() === today.getFullYear()
+                ) {
+                    box.classList.add('current-day');
+                } else {
+                    box.classList.remove('current-day');
+                }
+            });
+        }
+        //toggle entre as tasks dos dias da semana
+        function taskByDay() {
+            const title = document.querySelector('.tasks-title h3');
+
+            const DAY_NAMES = [
+                'SEGUNDA-FEIRA',
+                'TERÇA-FEIRA',
+                'QUARTA-FEIRA',
+                'QUINTA-FEIRA',
+                'SEXTA-FEIRA',
+                'SÁBADO',
+                'DOMINGO'
+            ];
+
+
+
+            DAY_BOX.forEach((dayBox, WEEK_DAY) => {
+                dayBox.addEventListener('click', () => {
+
+                    selectedWeekDay = WEEK_DAY;
+                    localStorage.setItem('selectedWeekDay', WEEK_DAY);
+
+                    DAY_BOX.forEach(d => d.classList.remove('active'));
+                    dayBox.classList.add('active');
+
+                    title.innerHTML = `<span>TAREFAS DE </span>${DAY_NAMES[WEEK_DAY]}`;
+                    loadTasksByDay(WEEK_DAY);
+                });
+            });
+        }
+
+
+        // btn que muda as semanas e permite apenas voltar atras 1 semana
+        const minWeekStart = new Date(currentWeekStart);
+        minWeekStart.setDate(minWeekStart.getDate() - 7);
+
+        function changeWeek() {
+
+            const prevWeekBtn = document.getElementById('prev-week');
+            const nextWeekBtn = document.getElementById('next-week');
+
+            prevWeekBtn.addEventListener('click', () => {
+                //console.log('prevbtn');
+
+                currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+                updateWeekDisplay();
+                highlightCurrentDay();
+                clearActiveDay();
+                clearTasksView();
+
+                if (currentWeekStart.getTime() === minWeekStart.getTime()) {
+                    prevWeekBtn.disabled = true;
+                    prevWeekBtn.classList.add('disabled');
+                }
+            });
+
+            nextWeekBtn.addEventListener('click', () => {
+                currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+                updateWeekDisplay();
+                highlightCurrentDay();
+                clearActiveDay();
+                clearTasksView();
+
+
+                prevWeekBtn.disabled = false;
+                prevWeekBtn.classList.remove('disabled');
+            });
+
+        }
+
+        function clearTasksView() {
+            const taskWrapper = document.querySelector('.task-block-wrapper');
+            taskWrapper.innerHTML = '';
+
+        }
+
+
+        function clearActiveDay() {
+            DAY_BOX.forEach(box => box.classList.remove('active'));
+        }
+
+        const editTaskWrapper = document.querySelector('.task-edit-wrapper');
+
+        // nova task container pop-up
+        function taskNew() {
+            const addBtn = document.querySelector('.add-new-task-container');
+            const configurator = document.querySelector('.task-new-wrapper');
+            const closeBtn = configurator.querySelector('.icon-cfg');
+
+
+
+            addBtn.addEventListener('click', () => {
+                if (editTaskWrapper.classList.contains('open')) return;
+                configurator.classList.add('open');
+
+
+
+            });
+
+            closeBtn.addEventListener('click', () => {
+                configurator.classList.remove('open');
+            });
+
+
+        }
+
+
+
+        // funçao dia
+        function getDateFromWeekDay(CURRENT_DAY) {
+            const date = new Date(currentWeekStart);
+            date.setDate(date.getDate() + CURRENT_DAY);
+            return date.toISOString().split('T')[0];
+        }
+
+        // deploy das tasks de cada dia
+        function loadTasksByDay(CURRENT_DAY) {
+
+            const dateKey = getDateFromWeekDay(CURRENT_DAY);
+            const tasks = (tasksByDate[dateKey] || []).filter( // se tarefa existe usa-a, se nao impede o crash
+                task => task && typeof task === 'object'
+            );
+
+            // remove tarefas repetidas 
+            const taskWrapper = document.querySelector('.task-block-wrapper');
+            taskWrapper.innerHTML = '';
+
+            tasks.forEach((task, TASK_POSITION) => { 
+                //if (!task) return; //tarefa undefined
+                const div = document.createElement('div');
+                div.className = 'task-block';
+
+
+                // se task.done === true adiciona class completed
+                div.innerHTML = `
+                <div class="task ${task.done ? 'completed' : ''}"> 
+                    <img title="Task Done" class="icon-cfg toggle-task" src="./img/Check.svg" alt="task done">
+                    <div class="task-text">
+                        <h3>${task.title}</h3>
+                        ${task.description ? `<h4>${task.description}</h4>` : ''}
+                    </div>
+                    <img title="Eliminar tarefa" class="icon-cfg delete-task" src="./img/Trash_1.svg" alt="delete task">
+                </div>
+                `;
+
+                const taskEl = div.querySelector('.task');
+                const toggleIcon = div.querySelector('.toggle-task');
+                const deleteIcon = div.querySelector('.delete-task');
+
+
+                toggleIcon.addEventListener('click', (e) => {
+                    e.stopPropagation(); // o modal nao abre ao clicar no icon
+                    completeTask(CURRENT_DAY, TASK_POSITION);
+                });
+
+
+                deleteIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteTask(CURRENT_DAY, TASK_POSITION);
+                });
+
+
+                taskEl.addEventListener('click', () => {
+
+                    if (newTaskWrapper.classList.contains('open')) return;
+
+
+                    // tarefa e dia selecionads
+                    editingTaskId = TASK_POSITION;
+                    editingWeekDay = CURRENT_DAY;
+                    
+                    // abre a info da tarefa que ja existe
+                    editTitleInput.value = task.title;
+                    editDescriptionInput.value = task.description || '';
+
+                    editTaskWrapper.classList.add('open');
+                });
+
+                taskWrapper.appendChild(div);
+            });
+        }
+
+ 
+        function completeTask(CURRENT_DAY, TASK_POSITION) {
+            const dateKey = getDateFromWeekDay(CURRENT_DAY);
+
+            const task = tasksByDate[dateKey][TASK_POSITION]; //tasksByDate["...dia..."][2]
+
+            task.done = !task.done; // true = false ; false = true
+
+            saveTasks(); // o local storage guarda 
+            loadTasksByDay(CURRENT_DAY);
+        }
+
+         
+        function deleteTask(CURRENT_DAY, TASK_POSITION) {
+            const dateKey = getDateFromWeekDay(CURRENT_DAY);
+            tasksByDate[dateKey].splice(TASK_POSITION, 1); // remove a tarefa
+            saveTasks();
+            loadTasksByDay(CURRENT_DAY);
+        }
+ 
+       
+
+        function taskEditor() {
+
+            const editor = document.querySelector('.task-edit-wrapper');
+            const closeBtn = editor.querySelector('.icon-cfg');
+            const taskWrapper = document.querySelector('.task-block-wrapper');
+            const newTaskWrapper = document.querySelector('.task-new-wrapper');
+
+
+            taskWrapper.addEventListener('click', (e) => {
+                const taskEl = e.target.closest('.task');
+                if (!taskEl) return;
+
+
+                // para o editor nao abrir caso o task-new esteja aberto
+                if (newTaskWrapper.classList.contains('open')) return;
+
+                editor.classList.add('open');
+            });
+
+
+            closeBtn.addEventListener('click', () => {
+                editor.classList.remove('open');
+            });
+        }
+
+
+        const submitBtn = document.querySelector('.submit-task');
+        const newTaskWrapper = document.querySelector('.task-new-wrapper');
+
+        submitBtn.addEventListener('click', () => {
+            const title = document.getElementById('task-name').value;
+            const description = document.getElementById('task-description').value;
+
+            if (!title.trim()) return;
+
+            addTask(selectedWeekDay, title, description);
+
+            document.getElementById('task-name').value = '';
+            document.getElementById('task-description').value = '';
+            newTaskWrapper.classList.remove('open');
+        });
+
+         function addTask(CURRENT_DAY, title, description) {
+            const dateKey = getDateFromWeekDay(CURRENT_DAY);
+
+            if (!tasksByDate[dateKey]) {
+                tasksByDate[dateKey] = []; // em vez de undefined damos um valor "[]"
+            }
+
+            tasksByDate[dateKey].push({ // adiciona a task com done: false
+                title,
+                description,
+                done: false
+            });
+
+            saveTasks(); // salva no local storage
+            loadTasksByDay(CURRENT_DAY);
+        }
+
+
+
+
+        // guarda as task no storagelocal
+        function saveTasks() {
+            localStorage.setItem('tasksByDate', JSON.stringify(tasksByDate));
+        }
+
+
+
+        document.getElementById('save-task').addEventListener('click', () => {
+            const dateKey = getDateFromWeekDay(editingWeekDay);
+            const task = tasksByDate[dateKey][editingTaskId];
+
+            task.title = editTitleInput.value;
+            task.description = editDescriptionInput.value;
+
+            saveTasks();
+            loadTasksByDay(editingWeekDay);
+            //console.log('saved')
+            editWrapper.classList.remove('open');
+        });
+
+        document.getElementById('delete-task-edit').addEventListener('click', () => {
+            const dateKey = getDateFromWeekDay(editingWeekDay);
+            tasksByDate[dateKey].splice(editingTaskId, 1);
+
+            saveTasks();
+            loadTasksByDay(editingWeekDay);
+        });
+
+        document.getElementById('duplicate-task').addEventListener('click', () => {
+            const dateKey = getDateFromWeekDay(editingWeekDay);
+            const task = tasksByDate[dateKey][editingTaskId];
+
+            tasksByDate[dateKey].push({
+                ...task,
+                done: false
+            });
+
+            saveTasks();
+            loadTasksByDay(editingWeekDay);
+            editWrapper.classList.remove('open');
+        });
+
+        document.getElementById('move-task').addEventListener('click', () => {
+            const todayKey = getDateFromWeekDay(editingWeekDay);
+            const nextWeekDay = Math.min(editingWeekDay + 1, 6);
+            const tomorrowKey = getDateFromWeekDay(nextWeekDay);
+
+            const task = tasksByDate[todayKey].splice(editingTaskId, 1)[0];
+
+            if (!tasksByDate[tomorrowKey]) {
+                tasksByDate[tomorrowKey] = [];
+            }
+
+            tasksByDate[tomorrowKey].push(task);
+
+            saveTasks();
+            loadTasksByDay(editingWeekDay);
+            editWrapper.classList.remove('open');
+        });
+
+
+        //clock 
+
+        const timeDisplay = document.getElementById('time-display');
+        // const monthDisplay = document.getElementById('month-display');
+
+        function updateTime() {
+
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+
+        }
+
+        function updateDate() {
+
+            const now = new Date();
+            // monthDisplay.textContent = now.toLocaleDateString(undefined, { month: "short" });
+
+        }
+
+        function updateClockAndTime() {
+            updateTime();
+            updateDate();
+        }
+        switchTheme();
+        updateClockAndTime();
+        setInterval(updateClockAndTime, 1000);
+        highlightCurrentDay();
+        updateWeekDisplay();
+        changeWeek();
+        taskByDay();
+        loadTasksByDay(selectedWeekDay);
+        taskNew();
+        taskEditor();
+
+
+    </script>
+</body>
+
+</html>
