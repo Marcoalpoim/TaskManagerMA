@@ -41,6 +41,7 @@
                 <div class="week-container">
                     <div class="day-box" id="day-0">
                         <h2></h2>
+
                     </div>
                     <div class="day-box" id="day-1">
                         <h2></h2>
@@ -173,10 +174,10 @@
         <footer>
             <div class="footer-wrapper">
 
-                <a title="instagram" href="#"><img class="icon-cfg" src="./img/Instagram.svg" alt="instagram"></a>
-                <a title="email" href="#"><img class="icon-cfg" src="./img/mark_email_unread.svg" alt="email"></a>
-                <a title="linkedin" href="#"><img class="icon-cfg" src="./img/Linkedin.svg" alt="linkedin"></a>
-
+                <a title="linkedin" href="https://www.linkedin.com/in/marcoalpoim/"><img class="icon-cfg" src="./img/Linkedin.svg" alt="linkedin"></a>
+                <a title="email" href="mailto:marco.alpoim@live.com.pt"><img class="icon-cfg" src="./img/mark_email_unread.svg" alt="email"></a>
+                <a title="instagram" href="https://www.instagram.com/marcoalpoim/"><img class="icon-cfg" src="./img/Instagram.svg" alt="instagram"></a>
+              
 
             </div>
             <div class="clock-box">
@@ -280,9 +281,10 @@
         // atualiza a semana em destaque 
         function updateWeekDisplay() {
             DAY_BOX.forEach((box, WEEK_DAY) => {
-                const dayDate = new Date(currentWeekStart); // criar nova data baseada no currentWeekStart
 
-                dayDate.setDate(currentWeekStart.getDate() + WEEK_DAY); // segunda - 0
+                const dayDate = new Date(currentWeekStart); // criar nova data baseada no currentWeekStart para cada dia
+
+                dayDate.setDate(currentWeekStart.getDate() + WEEK_DAY); // segunda - 0 - COPIA
 
                 const dayName = dayDate.toLocaleDateString('pt-PT', { // toLocaleDateString para obter o nome do dia
                     weekday: 'short'
@@ -297,6 +299,7 @@
         // destaque sobre o dia atual
         function highlightCurrentDay() {
             const today = new Date();
+
             //const DAY_BOX = document.querySelectorAll('.day-box');
             DAY_BOX.forEach((box, WEEK_DAY) => {
                 const boxDate = new Date(currentWeekStart);
@@ -308,6 +311,13 @@
                     boxDate.getFullYear() === today.getFullYear()
                 ) {
                     box.classList.add('current-day');
+
+                    box.scrollIntoView({
+                        behavior: 'smooth',
+                        inline: 'center',
+                        block: 'nearest'
+                    });
+
                 } else {
                     box.classList.remove('current-day');
                 }
@@ -332,16 +342,22 @@
             DAY_BOX.forEach((dayBox, WEEK_DAY) => {
                 dayBox.addEventListener('click', () => {
 
-                    showTasksView();
-
                     selectedWeekDay = WEEK_DAY;
                     localStorage.setItem('selectedWeekDay', WEEK_DAY);
 
                     DAY_BOX.forEach(d => d.classList.remove('active'));
                     dayBox.classList.add('active');
 
+                    dayBox.scrollIntoView({ // ao clicar a tarefa fica ao centro (mobile) 
+                        behavior: 'smooth',
+                        inline: 'center',
+                        block: 'nearest'
+                    });
+
                     title.innerHTML = `<span>TAREFAS DE </span>${DAY_NAMES[WEEK_DAY]}`;
                     loadTasksByDay(WEEK_DAY);
+
+                    showTasksView();
                 });
             });
 
@@ -411,7 +427,7 @@
             if (!activeDay) {
                 return;
             } else {
-                 activeDay.classList.remove('active');
+                activeDay.classList.remove('active');
             }
 
             hideTasksView();
@@ -625,11 +641,16 @@
         });
 
         document.getElementById('delete-task-edit').addEventListener('click', () => {
+            const editor = document.querySelector('.task-edit-wrapper');
+            const closeBtn = editor.querySelector('.icon-cfg');
             const dateKey = getDateFromWeekDay(editingWeekDay);
             tasksByDate[dateKey].splice(editingTaskId, 1);
 
             saveTasks();
+            editor.classList.remove('open');
             loadTasksByDay(editingWeekDay);
+
+
         });
 
         document.getElementById('duplicate-task').addEventListener('click', () => {

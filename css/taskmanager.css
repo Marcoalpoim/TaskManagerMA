@@ -68,7 +68,7 @@
        flex-direction: column;
        align-items: center;
        gap: 20px;
-       text-align: right; 
+       text-align: right;
        color: #fff;
        padding: 20px;
    }
@@ -83,7 +83,7 @@
 
 
    header .header-wrapper {
-    overflow: hidden;
+       overflow: hidden;
        align-self: stretch;
        height: 67px;
        border-radius: 15px;
@@ -221,7 +221,7 @@
        flex-direction: column;
        align-items: center;
        gap: 20px;
-       text-align: right; 
+       text-align: right;
        color: #fff;
        height: 100%;
    }
@@ -330,7 +330,7 @@
        display: flex;
        text-align: center;
        font-weight: bold;
-       font-size: 1.2rem;
+       font-size: 1rem;
    }
 
 
@@ -359,9 +359,9 @@
        border: 1px dashed white;
    }
 
-.hidden{
-    display: none !important;
-}
+   .hidden {
+       display: none !important;
+   }
 
 
    main .task-wrapper {
@@ -398,12 +398,12 @@
        border-radius: 10px;
        background-color: #262626;
        overflow-x: hidden;
-        overflow-y: scroll;
+       overflow-y: scroll;
        flex-shrink: 0;
        display: flex;
        flex-direction: column;
        align-items: flex-start;
-     padding: 0px 5px 0 10px;
+       padding: 0px 5px 0 10px;
        box-sizing: border-box;
        gap: 10px;
        height: auto;
@@ -442,7 +442,7 @@
        display: flex;
        flex-direction: column;
        align-items: flex-start;
-       overflow-x: hidden; 
+       overflow-x: hidden;
    }
 
    main .task-wrapper .task-container .main-tasks .task-block-wrapper .task-block {
@@ -460,7 +460,7 @@
        display: flex;
        align-items: center;
        gap: 10px;
-       margin: 5px auto;
+       margin: 10px auto;
        flex-shrink: 0;
        padding: 5px;
        border-radius: 10px;
@@ -707,8 +707,8 @@
        align-items: center;
        padding: 10px;
        gap: 10px;
-        opacity: 0;
-        transition: opacity 1s ease;
+       opacity: 0;
+       transition: opacity 1s ease;
    }
 
    .task-edit-wrapper {
@@ -924,7 +924,7 @@
 
 
    @media only screen and (max-width: 768px) {
- 
+
        .body-wrapper {
            gap: 10px;
        }
@@ -981,15 +981,17 @@
 
        main .task-wrapper .task-edit-wrapper {
            position: fixed;
-           bottom: 0;
-           left: 0;
-           width: 100%;
- 
+           bottom: 25px;
+           left: 5px;
+           right: 5px;
+           width: 90%;
+           margin: 0 auto;
            transform: translateY(100%);
            opacity: 0;
            transition: transform 0.4s ease, opacity 0.3s ease;
            pointer-events: none;
        }
+
        .task-edit-wrapper {
            display: block;
        }
@@ -1001,14 +1003,13 @@
            pointer-events: auto;
        }
 
-         main .task-wrapper .task-new-wrapper {
+       main .task-wrapper .task-new-wrapper {
            position: fixed;
-           bottom: 0;
-           left: 0;
-           width: 100%;
-        
-
-
+           bottom: 25px;
+           left: 5px;
+           right: 5px;
+           width: 90%;
+           margin: 0 auto;
            transform: translateY(100%);
            opacity: 0;
 
@@ -1016,6 +1017,11 @@
            pointer-events: none;
        }
 
+       textarea {
+
+           height: 130px;
+
+       }
 
        .task-new-wrapper {
            display: block;
@@ -1051,7 +1057,7 @@
            min-width: 70px;
        }
 
-      
+
 
        ::-webkit-scrollbar {
            width: 5px;
@@ -1064,12 +1070,12 @@
        }
    }
 
-      @media only screen and (max-width: 240px) {
-    header .header-wrapper {
-        align-self: stretch;
-        height: auto;
-        gap: 0px;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-     }
-}
+   @media only screen and (max-width: 240px) {
+       header .header-wrapper {
+           align-self: stretch;
+           height: auto;
+           gap: 0px;
+           flex-wrap: wrap;
+           flex-direction: column-reverse;
+       }
+   }
